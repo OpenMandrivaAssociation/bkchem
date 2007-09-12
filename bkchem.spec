@@ -69,7 +69,7 @@ cat > $RPM_BUILD_ROOT%{_datadir}/applications/mandriva-%{name}.desktop << EOF
 Name=BKchem
 Comment=2D chemical structure drawing tool
 Exec=bkchem
-Icon=chemistry_section.png
+Icon=chemistry_section
 Terminal=false
 Type=Application
 Categories=Science;Chemistry;X-MandrivaLinux-MoreApplications-Sciences-Chemistry;
