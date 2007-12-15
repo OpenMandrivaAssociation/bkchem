@@ -1,5 +1,5 @@
 %define name 	bkchem
-%define version 0.11.5
+%define version 0.12.0
 %define release %mkrel 1
 
 
@@ -7,7 +7,7 @@ Summary: 	Python 2D chemical structure drawing tool
 Name: 		%{name}
 Version: 	%{version}
 Release: 	%{release}
-Source0: 	http://www.zirael.org/bkchem/download/%name-%{version}.tar.bz2
+Source0: 	http://www.zirael.org/bkchem/download/%name-%{version}.tar.gz
 URL: 		http://bkchem.zirael.org
 License: 	GPL
 Group: 		Sciences/Chemistry
@@ -51,17 +51,6 @@ echo 'export BKCHEM_IMAGE_PATH=%_datadir/%name/images' >> $RPM_BUILD_ROOT/%_bind
 echo 'python %_libdir/python%pyver/site-packages/%name/%name.py' >> $RPM_BUILD_ROOT/%_bindir/%name
 chmod 755 $RPM_BUILD_ROOT/%_bindir/%name
 
-# menu
-install -d $RPM_BUILD_ROOT%{_menudir}
-cat << EOF > $RPM_BUILD_ROOT%{_menudir}/%{name}
-?package(%{name}):command="bkchem"\
-needs="x11"\
-section="More Applications/Sciences/Chemistry"\
-title="BKChem"\
-icon="chemistry_section.png"\
-longtitle="2D chemical structure drawing tool" \
-xdg="true"
-EOF
 
 mkdir -p $RPM_BUILD_ROOT%{_datadir}/applications
 cat > $RPM_BUILD_ROOT%{_datadir}/applications/mandriva-%{name}.desktop << EOF
@@ -72,7 +61,7 @@ Exec=bkchem
 Icon=chemistry_section
 Terminal=false
 Type=Application
-Categories=Science;Chemistry;X-MandrivaLinux-MoreApplications-Sciences-Chemistry;
+Categories=Science;Chemistry;
 EOF
 
 %find_lang BKchem
@@ -91,8 +80,8 @@ rm -rf $RPM_BUILD_ROOT
 %doc gpl.txt README RELEASE 
 %_bindir/%name
 %_datadir/%name
-%doc %_docdir/%name
+#%doc %_docdir/%name
 %_libdir/python%pyver/site-packages/%name
-%_menudir/%name
 %_datadir/applications/mandriva-%name.desktop
+%{py_platsitedir}/*.egg-info
 
