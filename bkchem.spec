@@ -11,6 +11,7 @@ Source0: 	http://www.zirael.org/bkchem/download/%name-%{version}.tar.gz
 URL: 		http://bkchem.zirael.org
 License: 	GPL
 Group: 		Sciences/Chemistry
+BuildRoot: 	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires: 	python-devel 
 Requires: 	python python-imaging Pmw PyXML
 Buildarch:	noarch
