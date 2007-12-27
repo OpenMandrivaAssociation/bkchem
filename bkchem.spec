@@ -12,7 +12,7 @@ URL: 		http://bkchem.zirael.org
 License: 	GPL
 Group: 		Sciences/Chemistry
 BuildRoot: 	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
-BuildRequires: 	python-devel 
+BuildRequires: 	python-devel
 Requires: 	python python-imaging Pmw PyXML
 Buildarch:	noarch
 
@@ -77,11 +77,11 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f BKchem.lang
 %defattr(-,root,root)
-%doc gpl.txt README RELEASE 
+%doc gpl.txt README RELEASE
 %_bindir/%name
 %_datadir/%name
 #%doc %_docdir/%name
-%_libdir/python%pyver/site-packages/%name
+%{py_puresitedir}/%name/*
 %_datadir/applications/mandriva-%name.desktop
-%{py_platsitedir}/*.egg-info
+%{py_puresitedir}/*.egg-info
 
