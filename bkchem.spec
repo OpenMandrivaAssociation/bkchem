@@ -1,6 +1,6 @@
 %define name 	bkchem
-%define version 0.12.0
-%define release %mkrel 2
+%define version 0.12.1
+%define release %mkrel 1
 
 
 Summary: 	Python 2D chemical structure drawing tool
@@ -9,7 +9,7 @@ Version: 	%{version}
 Release: 	%{release}
 Source0: 	http://www.zirael.org/bkchem/download/%name-%{version}.tar.gz
 URL: 		http://bkchem.zirael.org
-License: 	GPL
+License: 	GPLv2+
 Group: 		Sciences/Chemistry
 BuildRoot: 	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires: 	python-devel
