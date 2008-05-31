@@ -1,5 +1,5 @@
 %define name 	bkchem
-%define version 0.12.1
+%define version 0.12.2
 %define release %mkrel 1
 
 
@@ -12,8 +12,8 @@ URL: 		http://bkchem.zirael.org
 License: 	GPLv2+
 Group: 		Sciences/Chemistry
 BuildRoot: 	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
-BuildRequires: 	python-devel
-Requires: 	python python-imaging Pmw PyXML
+%py_requires -d
+Requires: 	python-imaging Pmw PyXML
 Buildarch:	noarch
 
 %description
