@@ -1,5 +1,5 @@
 %define name 	bkchem
-%define version 0.12.4
+%define version 0.12.5
 %define release %mkrel 1
 
 
