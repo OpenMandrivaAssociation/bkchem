@@ -1,6 +1,6 @@
 %define name 	bkchem
 %define version 0.12.5
-%define release %mkrel 1
+%define release %mkrel 2
 
 
 Summary: 	Python 2D chemical structure drawing tool
@@ -84,6 +84,6 @@ rm -rf $RPM_BUILD_ROOT
 %doc gpl.txt README RELEASE
 %_bindir/%name
 %_datadir/%name
-%{py_puresitedir}/%name/*
+%{py_puresitedir}/%name
 %_datadir/applications/mandriva-%name.desktop
 %{py_puresitedir}/*.egg-info
