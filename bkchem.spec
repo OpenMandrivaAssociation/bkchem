@@ -1,5 +1,5 @@
 %define name 	bkchem
-%define version 0.12.6
+%define version 0.13.0
 %define release %mkrel 1
 
 
@@ -33,7 +33,7 @@ rm -rf $RPM_BUILD_ROOT
 mkdir -p $RPM_BUILD_ROOT/%_bindir
 touch $RPM_BUILD_ROOT/%_bindir/%name
 python setup.py install --root=$RPM_BUILD_ROOT
-chmod 644 gpl.txt README RELEASE
+chmod 644 gpl.txt README 
 pushd $RPM_BUILD_ROOT/%_datadir
 chmod 644 `find -type f`
 chmod 755 `find -type d`
@@ -81,7 +81,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f BKchem.lang
 %defattr(-,root,root)
-%doc gpl.txt README RELEASE
+%doc gpl.txt README 
 %_bindir/%name
 %_datadir/%name
 %{py_puresitedir}/%name
