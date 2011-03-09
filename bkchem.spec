@@ -1,13 +1,13 @@
 %define name 	bkchem
-%define version 0.13.0
-%define release %mkrel 3
+%define version 0.14.0
+%define release %mkrel 0.pre2.1
 
 
 Summary: 	Python 2D chemical structure drawing tool
 Name: 		%{name}
 Version: 	%{version}
 Release: 	%{release}
-Source0: 	http://www.zirael.org/bkchem/download/%name-%{version}.tar.gz
+Source0:	http://bkchem.zirael.org/download/%name-%{version}-pre2.tar.gz
 URL: 		http://bkchem.zirael.org
 License: 	GPLv2+
 Group: 		Sciences/Chemistry
@@ -17,13 +17,13 @@ Requires: 	python-imaging Pmw PyXML
 Buildarch:	noarch
 
 %description
-BKchem is a free (as in free software :o) chemical drawing program. It was
-concieved and written by Beda Kosata.  Supported file formats are SVG and CML.
+BKChem is a free (as in free software :o) chemical drawing program. It was
+conceived and written by Beda Kosata.  Supported file formats are SVG and CML.
 The output looks best with the Adobe SVG viewer, but sodipodi and batik do a
 reasonable job as well.
 
-%prep
-%setup -q
+%prep 
+%setup -q -n %name-%{version}-pre2
 touch INSTALL.binary
 
 %build
@@ -64,7 +64,7 @@ Type=Application
 Categories=Science;Chemistry;
 EOF
 
-%find_lang BKchem
+%find_lang BKChem
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -79,7 +79,7 @@ rm -rf $RPM_BUILD_ROOT
 %clean_menus
 %endif
 
-%files -f BKchem.lang
+%files -f BKChem.lang
 %defattr(-,root,root)
 %doc gpl.txt README 
 %_bindir/%name
