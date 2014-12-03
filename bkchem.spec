@@ -7,7 +7,7 @@ Source0:	http://bkchem.zirael.org/download/%{name}-%{version}-pre2.tar.gz
 URL: 		http://bkchem.zirael.org
 License: 	GPLv2+
 Group: 		Sciences/Chemistry
-BuildRequires:  python-devel
+BuildRequires:  pkgconfig(python2)
 Requires: 	python-imaging Pmw
 Buildarch:	noarch
 
@@ -26,7 +26,7 @@ touch INSTALL.binary
 %install
 mkdir -p %{buildroot}/%{_bindir}
 touch %{buildroot}/%{_bindir}/%{name}
-python setup.py install --root=%{buildroot}
+python2 setup.py install --root=%{buildroot}
 chmod 644 gpl.txt README 
 pushd %{buildroot}/%{_datadir}
 chmod 644 `find -type f`
@@ -42,7 +42,7 @@ echo 'export BKCHEM_MODULE_PATH=%{py_puresitedir}/%{name}' >> %{buildroot}/%{_bi
 echo 'export BKCHEM_TEMPLATE_PATH=%{_datadir}/%{name}/templates' >> %{buildroot}/%{_bindir}/%{name}
 echo 'export BKCHEM_PIXMAP_PATH=%{_datadir}/%{name}/pixmaps' >> %{buildroot}/%{_bindir}/%{name}
 echo 'export BKCHEM_IMAGE_PATH=%{_datadir}/%{name}/images' >> %{buildroot}/%{_bindir}/%{name}
-echo 'python %{py_puresitedir}/%{name}/%{name}.py' >> %{buildroot}/%{_bindir}/%{name}
+echo 'python %{py2_puresitedir}/%{name}/%{name}.py' >> %{buildroot}/%{_bindir}/%{name}
 chmod 755 %{buildroot}/%{_bindir}/%{name}
 
 
@@ -65,7 +65,7 @@ EOF
 %doc gpl.txt README 
 %{_bindir}/%{name}
 %{_datadir}/%{name}
-%{py_puresitedir}/%{name}
+%{py2_puresitedir}/%{name}
 %{_datadir}/applications/mandriva-%{name}.desktop
-%{py_puresitedir}/*.egg-info
+%{py2_puresitedir}/*.egg-info
 
