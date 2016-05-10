@@ -1,6 +1,6 @@
 %define name 	bkchem
 %define version 0.14.0
-%define release %mkrel 0.pre2.2
+%define release %mkrel 0.pre2.3
 
 
 Summary: 	Python 2D chemical structure drawing tool
@@ -59,7 +59,7 @@ Exec=bkchem
 Icon=chemistry_section
 Terminal=false
 Type=Application
-Categories=Science;Chemistry;
+Categories=Science;Chemistry;Education;
 EOF
 
 %find_lang BKChem
